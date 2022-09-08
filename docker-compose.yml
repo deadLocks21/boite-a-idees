@@ -7,7 +7,7 @@ services:
         ports:
             - "80:80"
         working_dir: /var/www/
-        container_name: change
+        container_name: boite-a-idees
         volumes:
             - ./app:/var/www
         environment:
@@ -16,7 +16,7 @@ services:
       platform: linux/x86_64
       image: mysql:8
       restart: always
-      container_name: change-db
+      container_name: boite-a-idees-db
       environment:
         MYSQL_DATABASE: db
         MYSQL_USER: user
@@ -31,7 +31,7 @@ services:
     phpmyadmin:
       image: phpmyadmin/phpmyadmin
       restart: always
-      container_name: change-pma
+      container_name: boite-a-idees-pma
       environment:
         PMA_HOST: db
         PMA_USER: root
